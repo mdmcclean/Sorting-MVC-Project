@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Bubble";
+}
+@{
+    Layout = null;
+}
+@model System.Collections.Generic.List<SortingProject.Models.Numbers>
+<link href="~/Content/HomePage.css" rel="stylesheet" />
+
+<h2>Doing your Bubble Sort!</h2>
+
+<div class="overallBox">
+    <div class="chart" style="grid-template-columns:repeat(@Model.Count, 1fr)">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            int barStart = 100 - (Model[i].Value);
+            <div class="bar" style="grid-row-start: @barStart; background-color:@Model[i].barColor; color:@Model[i].textColor">@Model[i].Value</div>
+        }
+    </div>
+    <input type="button" style="margin:20px" value="Next Pass Through" onclick="location.href='@Url.Action("Bubble", "Home")'" /> 
+    <h2>Turn #@Session["count"]</h2>
+</div>
+

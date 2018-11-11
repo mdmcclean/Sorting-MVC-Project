@@ -1,0 +1,20 @@
+﻿.overallBox {
+    width: 95%;
+    background-color: red;
+    height: 600px;
+    display: block;
+    margin: 10px;
+    justify-content:center;
+}
+.chart{
+    height:600px;
+    width:100%;
+    display:grid;
+    background-color:blue;
+    grid-column-gap: 5px;
+    grid-template-rows: repeat(100, 1fr);
+}
+.bar{
+    grid-row-end:101;
+    text-align:center;
+}
